@@ -3,6 +3,13 @@
 
 using namespace std;
 
+struct Pizza
+{
+	string pizzeria;
+	int diameter;
+	float weight;
+};
+
 int main()
 {
 	string pizzeria;
@@ -14,9 +21,17 @@ int main()
 	cin >> diameter;
 	cout << "Enter pizza weight: " << endl;
 	cin >> weight;
+
+	Pizza myPizza = 
+	{
+		pizzeria,
+		diameter,
+		weight
+	};
+
 	cout << "You entered: " << endl;
-	cout << "Pizzeria: " << pizzeria << endl
-		<< "Pizza diameter: " << diameter << endl
-		<< "Pizza weight: " << weight << endl;
+	cout << "Pizzeria: " << myPizza.pizzeria << endl
+		<< "Pizza diameter: " << myPizza.diameter << endl
+		<< "Pizza weight: " << myPizza.weight << endl;
 	return 0;
 }
