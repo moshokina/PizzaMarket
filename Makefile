@@ -4,7 +4,7 @@ RM=rm -rf
 SOURCES=main.cpp
 EXECUTABLE=PizzaInfo
 
-all: pizza_info
+all: clean pizza_info
 
 pizza_info: main.o
 
