@@ -10,40 +10,33 @@ struct Pizza
 	float weight;
 };
 
-Pizza inputData()
+Pizza * inputData()
 {
-	string pizzeria;
-    int diameter = 0;
-    float weight = 0;
-    cout << "Enter pizzeria: " << endl;
-    getline(cin, pizzeria);
-    cout << "Enter pizza diameter: " << endl;
-    cin >> diameter;
-    cout << "Enter pizza weight: " << endl;
-    cin >> weight;
+	Pizza * pizza = new Pizza;
 
-    Pizza pizza =
-    {
-        pizzeria,
-        diameter,
-        weight
-    };
+    cout << "Enter pizzeria: " << endl;
+    getline(cin, pizza->pizzeria);
+    cout << "Enter pizza diameter: " << endl;
+    cin >> pizza->diameter;
+    cout << "Enter pizza weight: " << endl;
+    cin >> pizza->weight;
+
 	return pizza;
 }
 
-void outputData(Pizza pizza)
+void outputData(Pizza * pizza)
 {
     cout << "You entered: " << endl;
-    cout << "Pizzeria: " << pizza.pizzeria << endl
-        << "Pizza diameter: " << pizza.diameter << endl
-        << "Pizza weight: " << pizza.weight << endl;
+    cout << "Pizzeria: " << pizza->pizzeria << endl
+        << "Pizza diameter: " << pizza->diameter << endl
+        << "Pizza weight: " << pizza->weight << endl;
 }
 
 int main()
 {
 	Pizza *myPizza = new Pizza;
-	*myPizza = inputData();
-	outputData (*myPizza);
+	myPizza = inputData();
+	outputData (myPizza);
 	delete myPizza;
 	return 0;
 }
