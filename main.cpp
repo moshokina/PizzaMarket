@@ -41,7 +41,9 @@ void outputData(Pizza pizza)
 
 int main()
 {
-	Pizza myPizza = inputData();
-	outputData (myPizza);
+	Pizza *myPizza = new Pizza;
+	*myPizza = inputData();
+	outputData (*myPizza);
+	delete myPizza;
 	return 0;
 }
